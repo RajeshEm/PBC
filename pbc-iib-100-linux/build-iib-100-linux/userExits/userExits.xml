@@ -1,0 +1,53 @@
+<!--
+This file is copyright of Prolifics - (c) Prolifics 2013. All rights reserved. User exit file - you may make your own extensions here.
+
+See the readme.txt file for further terms and conditions.
+-->
+
+<!--
+INSTRUCTIONS:
+
+You may edit this file to insert your own custom behaviour to the automation scripts.
+
+1) Place your custom behaviour in the required exit below depending on when you want it to be called.
+
+2) Remove the default message line from your user exit target.
+
+3) To call your user exit from a build, add the calling target as an additional target in the build targets field of the Ant tab of your build definition. e.g. 'assembleApp, userExit1' will result in userExit1 being called after the assembly step. 
+
+4) Request the build - take a look in the log files and you should see your custom steps being executed.
+-->
+
+<project name="userExits">
+
+	<target name="-userExit1">
+
+		<echo message="Default message: No custom behaviour - remove this line when implementing custom behaviour" />
+
+	</target>
+
+	<target name="-userExit2">
+
+		<echo message="Default message: No custom behaviour - remove this line when implementing custom behaviour" />
+
+	</target>
+
+	<target name="-userExit3">
+
+		<echo message="Default message: No custom behaviour - remove this line when implementing custom behaviour" />
+
+	</target>
+
+	<target name="-userExit4">
+
+		<echo message="Default message: No custom behaviour - remove this line when implementing custom behaviour" />
+
+	</target>
+
+	<target name="-userExit5">
+
+		<echo message="Default message: No custom behaviour - remove this line when implementing custom behaviour" />
+
+	</target>
+
+</project>
