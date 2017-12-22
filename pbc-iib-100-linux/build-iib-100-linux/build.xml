@@ -463,7 +463,7 @@ See the readme.txt file for further terms and conditions.
 
 						<!-- Replace vars in classpath files -->
 
-						<replace dir="${BUILD_TMP}/source" value="lib&quot; path=&quot;${COMMON_JARS_HOME}">
+						<replace dir="${BUILD_TMP}/tmp/source" value="lib&quot; path=&quot;${COMMON_JARS_HOME}">
 							<include name="**/.classpath" />
 							<replacetoken>var&quot; path=&quot;COMMON_JARS_HOME</replacetoken>
 						</replace>
@@ -552,10 +552,10 @@ See the readme.txt file for further terms and conditions.
 									<isset property="bar.@{barName}.applications.list" />
 									<then>
 
-										<echo message="PREVIEW: ./mqsicreatebar -data ${BUILD_TMP}/source -b ${BUILD_OUTPUT}/@{barName}.bar -a ${barApplications} -deployAsSource ${barLibrariesSwitch} -trace -v ${BUILD_LOGS}/assemble-@{barName}.log" />
+										<echo message="PREVIEW: ./mqsicreatebar -data ${BUILD_TMP}/tmp/source -b ${BUILD_OUTPUT}/@{barName}.bar -a ${barApplications} -deployAsSource ${barLibrariesSwitch} -trace -v ${BUILD_LOGS}/assemble-@{barName}.log" />
 									</then>
 									<else>
-										<echo message="PREVIEW: ./mqsicreatebar -data ${BUILD_TMP}/source -b ${BUILD_OUTPUT}/@{barName}.bar -p ${barProjects} -o ${barDeployableFiles} ${barLibrariesSwitch} -deployAsSource -trace -v ${BUILD_LOGS}/assemble-@{barName}.log" />
+										<echo message="PREVIEW: ./mqsicreatebar -data ${BUILD_TMP}/tmp/source -b ${BUILD_OUTPUT}/@{barName}.bar -p ${barProjects} -o ${barDeployableFiles} ${barLibrariesSwitch} -deployAsSource -trace -v ${BUILD_LOGS}/assemble-@{barName}.log" />
 									</else>
 								</if>
 							</then>
