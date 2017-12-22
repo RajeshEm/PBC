@@ -463,7 +463,7 @@ See the readme.txt file for further terms and conditions.
 
 						<!-- Replace vars in classpath files -->
 
-						<replace dir="${BUILD_TMP}/tmp/source" value="lib&quot; path=&quot;${COMMON_JARS_HOME}">
+						<replace dir="${BUILD_TMP}/source" value="lib&quot; path=&quot;${COMMON_JARS_HOME}">
 							<include name="**/.classpath" />
 							<replacetoken>var&quot; path=&quot;COMMON_JARS_HOME</replacetoken>
 						</replace>
