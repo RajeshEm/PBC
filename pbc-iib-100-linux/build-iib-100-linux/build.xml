@@ -552,10 +552,10 @@ See the readme.txt file for further terms and conditions.
 									<isset property="bar.@{barName}.applications.list" />
 									<then>
 
-										<echo message="PREVIEW: ./mqsicreatebar -data ${BUILD_TMP}/tmp/source -b ${BUILD_OUTPUT}/@{barName}.bar -a ${barApplications} -deployAsSource ${barLibrariesSwitch} -trace -v ${BUILD_LOGS}/assemble-@{barName}.log" />
+										<echo message="PREVIEW: ./mqsicreatebar -data ${BUILD_TMP}/source -b ${BUILD_OUTPUT}/@{barName}.bar -a ${barApplications} -deployAsSource ${barLibrariesSwitch} -trace -v ${BUILD_LOGS}/assemble-@{barName}.log" />
 									</then>
 									<else>
-										<echo message="PREVIEW: ./mqsicreatebar -data ${BUILD_TMP}/tmp/source -b ${BUILD_OUTPUT}/@{barName}.bar -p ${barProjects} -o ${barDeployableFiles} ${barLibrariesSwitch} -deployAsSource -trace -v ${BUILD_LOGS}/assemble-@{barName}.log" />
+										<echo message="PREVIEW: ./mqsicreatebar -data ${BUILD_TMP}/source -b ${BUILD_OUTPUT}/@{barName}.bar -p ${barProjects} -o ${barDeployableFiles} ${barLibrariesSwitch} -deployAsSource -trace -v ${BUILD_LOGS}/assemble-@{barName}.log" />
 									</else>
 								</if>
 							</then>
