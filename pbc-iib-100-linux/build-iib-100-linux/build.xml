@@ -522,9 +522,9 @@ See the readme.txt file for further terms and conditions.
 							</then>
 							<else>
 
-								<!-- Otherwise leave the libraries switch empty -->
+								<!-- Otherwise leave the libraries switch empty 
 
-								<var name="barLibrariesSwitch" value="" />
+								<var name="barLibrariesSwitch" value="" /> -->
 							</else>
 						</if>
 
