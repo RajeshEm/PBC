@@ -562,18 +562,14 @@ See the readme.txt file for further terms and conditions.
 							<else>
 
 								<!-- Assemble as an application -->
+								<echo message="Building projects: ${barProjects} (with deployableFiles ${barDeployableFiles})" />
 
-								<if>
-									<isset property="bar.@{barName}.applications.list" />
-										<!-- Assemble as one or more projects -->
-
-
-										<exec dir="./" executable="${IIT_BIN}/mqsicreatebar" output="${BUILD_LOGS}/IIBBuild.@{barName}.log" failonerror="false" resultproperty="error.IIBBuild.@{barName}">
+								<exec dir="./" executable="${IIT_BIN}/mqsicreatebar" output="${BUILD_LOGS}/IIBBuild.@{barName}.log" failonerror="false" resultproperty="error.IIBBuild.@{barName}">
 											<arg line="-data ${BUILD_TMP}/source -b ${BUILD_OUTPUT}/@{barName}.bar -p ${barProjects} -o ${barDeployableFiles} ${barLibrariesSwitch} -deployAsSource -trace -v ${BUILD_LOGS}/assemble-@{barName}.log" />
-										</exec>
-
-								</if>
-
+								</exec>
+																	<isset property="bar.@{barName}.applications.list" />
+								
+								
 								<antcall target="-checkIIBErrors">
 									<param name="fileToCheck" value="${BUILD_LOGS}/IIBBuild.@{barName}.log" />
 									<param name="fileToCheckLabel" value="Assemble @{barName} log file (with error description)." />
