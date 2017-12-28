@@ -565,17 +565,6 @@ See the readme.txt file for further terms and conditions.
 
 								<if>
 									<isset property="bar.@{barName}.applications.list" />
-									<then>
-
-										<echo message="Building applications: ${barApplications}" />
-
-										<exec dir="./" executable="${IIT_BIN}/mqsicreatebar" output="${BUILD_LOGS}/IIBBuild.@{barName}.log" failonerror="false" resultproperty="error.IIBBuild.@{barName}">
-											<arg line="-data ${BUILD_TMP}/source -b ${BUILD_OUTPUT}/@{barName}.bar -a ${barApplications} -deployAsSource ${barLibrariesSwitch} -trace -v ${BUILD_LOGS}/assemble-@{barName}.log" />
-										</exec>
-
-									</then>
-									<else>
-
 										<!-- Assemble as one or more projects -->
 
 										<echo message="Building projects: ${barProjects} (with deployableFiles ${barDeployableFiles})" />
@@ -584,7 +573,6 @@ See the readme.txt file for further terms and conditions.
 											<arg line="-data ${BUILD_TMP}/source -b ${BUILD_OUTPUT}/@{barName}.bar -p ${barProjects} -o ${barDeployableFiles} ${barLibrariesSwitch} -deployAsSource -trace -v ${BUILD_LOGS}/assemble-@{barName}.log" />
 										</exec>
 
-									</else>
 								</if>
 
 								<antcall target="-checkIIBErrors">
